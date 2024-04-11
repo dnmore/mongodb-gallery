@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  --color-blue: #096ee0;
+  --color-gray: #7d7e80;
+  --color-white: #ffff;
+  --color-black: #0d0c0c;
+}
+
+body {
+  color: var(--color-black);
+  font-family: Roboto, sans-serif;
+  background-color: var(--color-white);
+}
+
+#main__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0 2%;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#logo a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+#main__header nav {
+  display: none;
+}
+
+.nav__items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav__items a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+#hamburger__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: none;
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: transparent;
+  padding: 0;
+}
+
+#hamburger__button span {
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: var(--color-white);
+}
+
+#hamburger__button span:nth-of-type(3) {
+  width: 1.5rem;
+}
+
+#mobile__navigation {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-blue);
+}
+
+#mobile__navigation.open {
+  display: flex;
+}
+
+#mobile__navigation nav {
+  height: 20rem;
+  width: 90%;
+}
+
+#mobile__navigation a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 48rem) {
+  #main__header {
+    position: static;
+  }
+
+  #main__header nav {
+    display: block;
+  }
+
+  #hamburger__button {
+    display: none;
+  }
+
+  #mobile__navigation {
+    display: none;
+  }
+
+  .nav__items {
+    flex-direction: row;
+  }
+
+  .nav__items a {
+    margin: 0 1rem;
+  }
+}
