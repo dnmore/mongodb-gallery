@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('includes/head', {pageTitle: 'Sign up'}) %>
-    <link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="/styles/form.css" />
   </head>
   <body>
     <%- include('includes/navigation')%>
@@ -16,18 +16,14 @@
         <input type="email" id="email" name="email" required />
       </div>
       <div class="form__item">
+        <label for="confirm-email">E-mail</label>
+        <input type="email" id="confirm-email" name="confirm-email" required />
+      </div>
+      <div class="form__item">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required />
       </div>
-      <div class="form__item">
-        <label for="confirm-password">Confirm Password</label>
-        <input
-          type="confirm-password"
-          id="confirm-password"
-          name="confirm-password"
-          required
-        />
-      </div>
+      
       <button>REGISTER</button>
     </form>
   </body>
