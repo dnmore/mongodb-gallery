@@ -36,4 +36,37 @@ router.get("/login", async function (req, res) {
   res.render("login");
 });
 
+router.post("/login", async function (req, res) {
+  const userEnteredData = req.body;
+  const userEmail = userEnteredData.email;
+  const userPassword = userEnteredData.password;
+
+  const existingUser = await db
+    .getDb()
+    .collection("users")
+    .findOne({ email: userEmail });
+
+  if (!existingUser) {
+    console.log("Login failed! - Not existing user");
+    return res.redirect("/login");
+  }
+
+  const passwordsMatch = await bcrypt.compare(
+    userPassword,
+    existingUser.password
+  );
+
+  if (!passwordsMatch) {
+    console.log("Login failed - Passwords do not match");
+    return res.redirect("/login");
+  }
+
+  console.log("user authenticated");
+  res.redirect("/profile");
+});
+
+router.get("/profile", async function (req, res) {
+  res.render("profile");
+});
+
 module.exports = router;
