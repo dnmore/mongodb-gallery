@@ -2,9 +2,16 @@
   <div id="logo"><a href="/">Logo</a></div>
   <nav>
     <div class="nav__items">
+      <% if(!locals.isAuth){   %>
       <a href="/signup">Signup</a>
       <a href="/login">Login</a>
-      <a href="/">Profile</a>
+      <% } %>
+      <% if(locals.isAuth){  %>
+      <a href="/profile">Profile</a>
+      <form action="/logout" method="POST">
+        <button>Logout</button>
+      </form>
+      <% } %>
     </div>
   </nav>
   <button id="hamburger__button">
@@ -16,9 +23,16 @@
 <aside id="mobile__navigation">
   <nav>
     <div class="nav__items">
+      <% if(!locals.isAuth){   %>
       <a href="/signup">Signup</a>
       <a href="/login">Login</a>
-      <a href="/">Profile</a>
+      <% } %>
+      <% if(locals.isAuth){  %>
+      <a href="/profile">Profile</a>
+      <form action="/logout" method="POST">
+        <button>Logout</button>
+      </form>
+      <% } %>
     </div>
   </nav>
 </aside>
