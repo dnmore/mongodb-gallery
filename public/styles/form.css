@@ -34,3 +34,11 @@ input:focus {
   color: var(--color-red);
   margin: 20px auto;
 }
+
+#image-preview {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px auto;
+  object-fit: cover;
+  display: none;
+}

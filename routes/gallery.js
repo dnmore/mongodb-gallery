@@ -1,12 +1,25 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const multer = require("multer");
+const uuid = require("uuid").v4;
 
 const db = require("../data/database");
 
+const storageConfig = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "images");
+  },
+  filename: function (req, file, cb) {
+    cb(null, uuid() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storageConfig });
 const router = express.Router();
 
-router.get("/", function (req, res) {
-  res.render("home");
+router.get("/", async function (req, res) {
+  const images = await db.getDb().collection("images").find().toArray();
+  res.render("home", { images: images });
 });
 
 router.get("/signup", function (req, res) {
@@ -163,6 +176,18 @@ router.get("/profile", function (req, res) {
     return res.status(401).render("401");
   }
   res.render("profile");
+});
+
+router.post("/profile", upload.single("image"), async function (req, res) {
+  const uploadedImage = req.file;
+  const imageTitle = req.body;
+
+  await db.getDb().collection("images").insertOne({
+    title: imageTitle.title,
+    imagePath: uploadedImage.path,
+  });
+
+  res.redirect("/");
 });
 
 router.post("/logout", function (req, res) {

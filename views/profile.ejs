@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('includes/head', {pageTitle: 'Profile'}) %>
-</head>
-<body>
-   <%- include('includes/navigation')%>
-</body>
+  <head>
+    <%- include('includes/head', {pageTitle: 'Profile'}) %>
+    <link rel="stylesheet" href="/styles/form.css" />
+    <script src="/scripts/file-preview.js" defer></script>
+  </head>
+  <body>
+    <%- include('includes/navigation')%>
+
+    <h3>Hi Username!</h3>
+    <h4>Upload Image</h4>
+
+    <form action="/profile" method="post" enctype="multipart/form-data">
+      <div class="form__item">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required />
+      </div>
+
+      <div class="form__item">
+        <label for="image">Image</label>
+        <img id="image-preview" src="" alt="Image preview" />
+        <input
+          type="file"
+          id="image"
+          name="image"
+          required
+          accept="image/*"
+        />
+      </div>
+
+      <button>SAVE</button>
+    </form>
+  </body>
 </html>

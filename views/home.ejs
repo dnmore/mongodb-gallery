@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('includes/head', {pageTitle: 'Home'}) %>
-</head>
-<body>
-   <%- include('includes/navigation')%>
-</body>
+  <head>
+    <%- include('includes/head', {pageTitle: 'Home'}) %>
+  </head>
+  <body>
+    <%- include('includes/navigation')%>
+
+    <h2>Gallery</h2>
+    <p>Signup or Login to upload your photo!</p>
+    <div class="images__container">
+      <% for (const image of images) { %>
+        <div class="card__container">
+          <div class="card__background">
+            <img src="<%= image.imagePath %>" alt="<%= image.title %>" />
+          </div>
+          <div class="card__body">
+            <h4><%= image.title %></h4>
+          </div>
+        </div>
+        <% } %>
+    </div>
+
+  </body>
 </html>
-
-  
-
- 
-  
