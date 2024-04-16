@@ -8,6 +8,7 @@ const db = require("./data/database");
 const galleryRoutes = require("./routes/gallery");
 
 const MongoDBStore = mongodbStore(session);
+require('dotenv').config()
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.use("/images", express.static("images"));
 
 app.use(
   session({
-    secret: "foo",
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
     store: sessionStore,

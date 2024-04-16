@@ -8,8 +8,7 @@
   <body>
     <%- include('includes/navigation')%>
 
-    <h3>Hi Username!</h3>
-    <h4>Upload Image</h4>
+    <h3>Upload your image</h3>
 
     <form action="/profile" method="post" enctype="multipart/form-data">
       <div class="form__item">
@@ -20,13 +19,7 @@
       <div class="form__item">
         <label for="image">Image</label>
         <img id="image-preview" src="" alt="Image preview" />
-        <input
-          type="file"
-          id="image"
-          name="image"
-          required
-          accept="image/*"
-        />
+        <input type="file" id="image" name="image" required accept="image/*" />
       </div>
 
       <button>SAVE</button>
