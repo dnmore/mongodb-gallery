@@ -11,16 +11,16 @@ Application with authentication logic built using Node.js and MongoDB database w
 
 ## Stack
 
--`node.js` - JavaScript runtime environment
--`express.js` - web framework for node.js
--`EJS` - embedded JavaScript templating
--`mongodb` - may be replaced by `mongoose`
--`nodemon` - tool automatically restarting the node application when changes are detected
--`bcryptjs` - password-hashing library
--`multer` - middleware that handles `multipart/form-data`
--`express-session`, `connect-mongodb-session` required to create `sessions`
--`uuid` - required for creation of universally unique identifiers
--`dotenv` - required for loading environment variables
+*`node.js` JavaScript runtime environment
+*`express.js` web framework for node.js
+*`EJS` embedded JavaScript templating
+*`mongodb` may be replaced by `mongoose`
+*`nodemon` tool automatically restarting the node application when changes are detected
+*`bcryptjs` password-hashing library
+*`multer` middleware that handles `multipart/form-data`
+*`express-session`, `connect-mongodb-session` required to create `sessions`
+*`uuid` required for creation of universally unique identifiers
+*`dotenv` required for loading environment variables
 
 
 ## Database 
