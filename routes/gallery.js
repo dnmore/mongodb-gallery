@@ -153,7 +153,7 @@ router.post("/login", async function (req, res) {
   if (!passwordsMatch) {
     req.session.inputData = {
       hasError: true,
-      message: "Login failed -please check your credentials",
+      message: "Login failed - please check your credentials",
       email: userEmail,
       password: userPassword,
     };
