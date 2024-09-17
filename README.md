@@ -1,56 +1,64 @@
-# Mongodb Gallery
+# MongoDB Gallery - Image Upload and Profile Management
+
+## Overview
 
 Application with authentication logic built using Node.js and MongoDB database which allows upon authentication to access a profile page and upload an image file to be displayed on home page.
 
 ## Features
 
-- E-mail Sign Up, Validation, Authentication
-- Submitted data will be stored and retrieved in and from MongoDB Database
-- Upload image file with image preview
+- User authentication (sign-up, login)
+- Upload image files with previews
+- Manage user profile
+- Store uploaded images in MongoDB
 
 
-## Stack
+## Tech Stack
 
-- `node.js` JavaScript runtime environment
-- `express.js` web framework for node.js
-- `EJS` embedded JavaScript templating
-- `mongodb` may be replaced by `mongoose`
-- `nodemon` tool automatically restarting the node application when changes are detected
-- `bcryptjs` password-hashing library
-- `multer` middleware that handles `multipart/form-data`
-- `express-session`, `connect-mongodb-session` required to create `sessions`
-- `uuid` required for creation of universally unique identifiers
-- `dotenv` required for loading environment variables
+- `Node.js`– Backend runtime
+- `Express.js`– Web framework for Node.js
+- `EJS`– Templating engine for rendering dynamic content
+- `MongoDB`– NoSQL database for storing data
+- `Nodemon` – Automatically restarts the server on file changes
+- `Bcryptjs` – Password hashing
+- `Multer`– Middleware for handling file uploads
+- `Express-Session`– Session management
+- `UUID` – Unique identifier generation
+- `Dotenv` – Environment variable management
 
 
-## Database 
+## Database Setup
 
-Database named `gallery`, you can create it on Mongo Shell with the following command 
+Create a MongoDB database named `gallery`:
 
 ```
 use gallery
 
 ```
 
-## Cloning
-
-You can [clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) and install the dependencies with the following command
+## Getting Started
+### Installation
+Clone the repository and install the dependencies:
 
 ```
+$ git clone https://github.com/dnmore/mongodb-gallery.git
 $ npm install
 
 ```
-`environment variable` is to be set up for the session `secret`. You can run the following command to start the application
+### Environment Variables
+Set up environment variables for the session secret in a `.env` file.
+
+### Running the Application
+To start the server, run:
 
 ```
 $ npm start
 
 ```
 
-The server will be running on port 3000, visit `http://localhost:3000/`
+The application will be running at `http://localhost:3000/`.
 
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
 
