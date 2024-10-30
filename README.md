@@ -4,15 +4,14 @@
 
 Application with authentication logic built using Node.js and MongoDB database which allows upon authentication to access a profile page and upload an image file to be displayed on home page.
 
-## Features
+## 🔥 Features
 
-- User authentication (sign-up, login)
-- Upload image files with previews
-- Manage user profile
-- Store uploaded images in MongoDB
+- Secure user authentication and session management
+- Image uploads with previews
 
 
-## Tech Stack
+
+## 🛠️ Tech Stack
 
 - `Node.js`– Backend runtime
 - `Express.js`– Web framework for Node.js
@@ -26,16 +25,7 @@ Application with authentication logic built using Node.js and MongoDB database w
 - `Dotenv` – Environment variable management
 
 
-## Database Setup
-
-Create a MongoDB database named `gallery`:
-
-```
-use gallery
-
-```
-
-## Getting Started
+## 🚀 Getting Started
 ### Installation
 Clone the repository and install the dependencies:
 
@@ -44,6 +34,16 @@ $ git clone https://github.com/dnmore/mongodb-gallery.git
 $ npm install
 
 ```
+
+### Database Setup
+
+Create a MongoDB database named `gallery`:
+
+```
+use gallery
+
+```
+
 ### Environment Variables
 Set up environment variables for the session secret in a `.env` file.
 
@@ -58,7 +58,7 @@ $ npm start
 The application will be running at `http://localhost:3000/`.
 
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License.
 
